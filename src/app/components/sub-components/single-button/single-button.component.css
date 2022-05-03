@@ -1,0 +1,47 @@
+.buttons {
+  margin-top: 35px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  min-width: 120px;
+  min-height: 38px;
+  font-size: 15px;
+  background: #fff;
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 0.5rem 0.5rem 1.75rem rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: none;
+  border-color: var(--customBlue);
+  opacity: 0.9;
+}
+
+button:first-child {
+  margin-right: 10px;
+  background: var(--customBlue);
+  color: #fff;
+}
+
+@media screen and (max-width: 321px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  button:first-child {
+    margin-right: 0px;
+    box-shadow: none;
+  }
+}
