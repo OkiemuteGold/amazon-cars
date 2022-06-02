@@ -1,75 +1,173 @@
-.change_view_buttons .buttons {
-  width: fit-content;
-  border-radius: 5px;
-  padding: 2px;
-  margin-bottom: 30px;
-  margin-left: 3px;
-  border: 2px solid var(--customBlue);
+/* about ------------- */
+#about {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
-.change_view_buttons button {
-  padding: 0.5rem 1rem;
-  min-width: 75px;
-  min-height: 35px;
-  font-size: 15px;
-  background: #fff;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 1.75rem rgba(0, 0, 0, 0.15);
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
+#about p {
+  color: var(--customTextColor);
 }
 
-.change_view_buttons button:first-child {
-  border-radius: 5px 0 0 5px;
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
-.change_view_buttons button.active {
+form #email {
+  min-width: 250px;
+}
+
+/* .form-group {
+  position: relative;
+}
+
+form #submit {
+  padding: 0.5rem 0;
+  width: 100px;
+  margin-left: 0px;
+  position: absolute;
+  right: 2.5px;
+  top: 2.5px;
+  font-size: 13px;
   background: var(--customBlue);
   color: #fff;
-}
-
-.view_all_button {
-  text-align: center;
-  margin-top: 50px !important;
-}
-
-/* .listView .product-item {
-  flex-direction: column;
-  justify-content: center;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
 } */
 
-.listView .product-item {
-  /* box-shadow: 0.5rem 0.5rem 1.75rem rgba(0, 0, 0, 0.15); */
-  border: 1px solid rgba(0, 0, 0, 0.15);
+form #submit {
+  padding: 0.65rem 1rem;
+  min-width: 120px;
+  margin-left: 10px;
+  font-size: 13px;
+  background: var(--customBlue);
+  color: #fff;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
-.listView .product-item .bg-img {
-  /* border-radius: 5px 5px 0 0; */
-  display: none;
+/* form #submit:hover {
+  background: transparent;
+  border-color: var(--customBlue);
+  color: var(--customBlue); 
+}*/
+
+form #email:hover,
+form #email:focus {
+  outline: none;
+  box-shadow: 0.5rem 0.5rem 1.75rem rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (min-width: 550px) {
-  .listView {
-    display: block;
+form #email:valid {
+  border: 1px solid var(--customBlue);
+}
+
+/* howItWorks ------------- */
+#howItWorks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--lightGray);
+  border-radius: 100px 0px 100px 0px;
+}
+
+#howItWorks .content {
+  padding: 20px;
+  max-width: 400px;
+}
+
+#howItWorks .content h1 {
+  margin-bottom: 15px;
+}
+
+#howItWorks .content p {
+  color: var(--customTextColor);
+  font-size: 16px;
+}
+
+#howItWorks .content ul {
+  line-height: 32px;
+}
+
+#howItWorks .content ul li {
+  list-style: none;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#howItWorks .content ul li:before {
+  content: "\2713";
+  color: var(--customBlue);
+  margin-right: 4px;
+  height: 10px;
+  width: 10px;
+  padding: 1px 4px;
+  border-radius: 50%;
+}
+
+.video-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 32.5%;
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-height: 300px;
+  height: 100%;
+  border-radius: 5px;
+  margin: auto;
+}
+
+@media screen and (max-width: 769px) {
+  #howItWorks {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0;
   }
 
-  .listView .product-item {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-    margin-bottom: 1.875rem;
-    border: none;
+  .video-container {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  h1 {
+    font-size: 1.875rem;
   }
 
-  .listView .product-item .bg-img {
-    display: block;
-    min-width: 50%;
-    width: 500px;
-    border-radius: 5px 0 0 5px;
+  .video-container {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  form {
+    flex-direction: column;
   }
 
-  .listView .product-item .product-description {
-    padding: 20px;
+  form #submit {
+    margin: 10px;
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #about {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

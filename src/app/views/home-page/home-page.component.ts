@@ -7,17 +7,14 @@ import { AllCarsService } from "../../all-services/all-cars/all-cars.service";
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  first = '';
-  second = 'View All Cars';
-  
   allCars: any = [];
   carsService: any;
   viewMode = 'grid';
 
-  // updateView(view: any) {
-  //   console.log(view);
-  //   return view
-  // }
+  updateView(view: any) {
+    // console.log(view);
+    this.viewMode = view;
+  }
 
   constructor(service: AllCarsService) {
     this.carsService = service;

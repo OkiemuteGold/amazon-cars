@@ -1,5 +1,7 @@
-<main>
-    <section id="about" class="section-padd padd-lr-40">
+<main id="home" class="scroll_into_view_fix">
+    <hero></hero>
+
+    <section id="about" class="section-padd padd-lr-40 scroll_into_view_fix">
         <h1 class="mb-20">Best Quality Cars</h1>
         <p>
             Amazon Cars offers unique and best quality products.
@@ -7,19 +9,21 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
 
-        <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+        <form id="form">
             <div class="form-group">
-                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email"
+                <input type="email" name="email" id="email" class="form-control inputs" placeholder="Enter your email"
                     required>
-            </div>
-
-            <div class="form-group">
+                
                 <input type="submit" value="Get Started" id="submit">
             </div>
+
+            <!-- <div class="form-group">
+                <input type="submit" value="Get Started" id="submit">
+            </div> -->
         </form>
     </section>
 
-    <section id="howItWorks" class="section-padd">
+    <section id="howItWorks" class="section-padd scroll_into_view_fix">
         <div class="content">
             <h1 class="weight-300">How It Works</h1>
             <p>
@@ -41,12 +45,12 @@
         </div>
     </section>
 
-    <section id="products" class="section-padd padd-lr-40">
+    <section id="products" class="section-padd padd-lr-40 scroll_into_view_fix">
         <h1 class="main_title text-center mb-40">Luxury Cars</h1>
 
-        <!-- <view-mode-button [viewMode]="viewMode"></view-mode-button> -->
+        <view-mode-button [viewMode]="viewMode" (view)="updateView($event)"></view-mode-button>
 
-        <div class="change_view_buttons">
+        <!-- <div class="change_view_buttons">
             <div class="buttons">
                 <button [class.active]="viewMode == 'grid'" (click)="viewMode = 'grid'">
                     Grid
@@ -55,9 +59,9 @@
                     List
                 </button>
             </div>
-        </div>
+        </div> -->
 
-        <div class="products" [ngSwitch]="viewMode" [class]="viewMode == 'grid' ? 'products' : 'listView'">
+        <div class="products mt-30" [ngSwitch]="viewMode" [class]="viewMode == 'grid' ? 'products' : 'listView'">
             <div *ngFor="let car of allCars; let i=index" class="product-item">
                 <!-- <img src="image/product1.jpg" alt=""> -->
 
@@ -65,20 +69,18 @@
                 
                 <div class="product-description">
                     <div class="product-title">
-                        <h3 class="weight-400">{{ car.name }}</h3>
+                        <h3 class="weight-400 text-capitalize">{{ car.name }}</h3>
                         <span class="price">{{ car.price | currency: 'USD' }}</span>
                     </div>
                     <p>{{ car.desc }}</p>
-                    <button>Add to cart</button>
+
+                    <a class="button" [routerLink]="[ '/products', car.link]">View product</a>
                 </div>
             </div>
         </div>
         
         <div class="view_all_button">
-            <single-button 
-                [firstBtn]="first"
-                [secondBtn]="second"
-            ></single-button>
+            <a [routerLink]="[ '/products' ]">View All Cars</a>
         </div>
     </section>
 </main>
