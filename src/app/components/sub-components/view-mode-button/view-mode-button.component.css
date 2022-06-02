@@ -1,0 +1,28 @@
+.change_view_buttons .buttons {
+  width: fit-content;
+  border-radius: 5px;
+  padding: 2px;
+  /* border: 2px solid var(--customBlue); */
+}
+
+.change_view_buttons button {
+  padding: 0.5rem 1rem;
+  min-width: 75px;
+  min-height: 35px;
+  font-size: 15px;
+  background: #fff;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0 1.75rem rgba(0, 0, 0, 0.025);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.change_view_buttons button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.change_view_buttons button.active {
+  background: var(--customBlue);
+  color: #fff;
+}

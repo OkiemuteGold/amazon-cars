@@ -10,6 +10,10 @@ export class HeaderComponent implements OnInit {
 
   navLinks = [
     {
+      link: 'home',
+      name: 'Home'
+    },
+    {
       link: 'about',
       name: 'About'
     },

@@ -9,12 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ViewModeButtonComponent implements OnInit {
   @Input('viewMode') viewMode: any;
-  // @Output() view = new EventEmitter<any>();
-  
-  // emitView(view: any) {
-  //   this.view.emit(view);
-  //   console.log(view, "hi");
-  // }
+  @Output() view = new EventEmitter();
 
   ngOnInit(): void { }
 

@@ -1,16 +1,15 @@
-<div class="header-container">
-    <header id="header">
-        <a href="#wrapper" class="header-image">
-            <img id="header-img" src="../../../assets/images/logo1.svg" alt="logo">
-        </a>
-        <nav id="nav-bar" [ngClass]="isClicked ? 'show-nav': ''">
-            <li *ngFor="let navLink of navLinks">
-                <a [href]="'#' + navLink.link" class="nav-link">{{ navLink.name }}</a>
-            </li>
-        </nav>
+<header id="header">
+    <a href="#home" class="header-image">
+        <img id="header-img" src="../../../assets/images/logo1.svg" alt="logo">
+    </a>
+    
+    <nav id="nav-bar" [ngClass]="isClicked ? 'show-nav': ''">
+        <li *ngFor="let navLink of navLinks">
+            <a [href]="'#' + navLink.link" class="nav-link">{{ navLink.name }}</a>
+        </li>
+    </nav>
 
-        <div id="mobile-menu-toggler" [ngClass]="isClicked ? 'styled-toggler': ''" (click)="mobileToggler()">
-            <span class="mobile-menu-toggler"></span>
-        </div>
-    </header>
-</div>
+    <div id="mobile-menu-toggler" [ngClass]="isClicked ? 'styled-toggler': ''" (click)="mobileToggler()">
+        <span class="mobile-menu-toggler"></span>
+    </div>
+</header>

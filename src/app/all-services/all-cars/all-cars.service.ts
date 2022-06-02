@@ -9,6 +9,7 @@ export class AllCarsService {
       {
         id: 1,
         name: 'Honda Accord',
+        link: 'honda-accord',
         tag: "Office car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",
@@ -19,6 +20,7 @@ export class AllCarsService {
       {
         id: 2,
         name: 'Venza',
+        link: 'venza',
         tag: "Family car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",
@@ -29,6 +31,7 @@ export class AllCarsService {
       {
         id: 3,
         name: 'Toyota Avalon',
+        link: 'toyota-avalon',
         tag: "Classy car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",
@@ -39,6 +42,7 @@ export class AllCarsService {
       {
         id: 4,
         name: 'Rose Royce',
+        link: 'rose-royce',
         tag: "Sporty car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",
@@ -49,6 +53,7 @@ export class AllCarsService {
       {
         id: 5,
         name: 'Camry',
+        link: 'camry',
         tag: "Family car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",
@@ -59,6 +64,7 @@ export class AllCarsService {
       {
         id: 6,
         name: 'Porsche',
+        link: 'porsche',
         tag: "Sporty car",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.",
         rating: "4.546",

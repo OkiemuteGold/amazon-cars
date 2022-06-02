@@ -12,6 +12,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { SingleButtonComponent } from './components/sub-components/single-button/single-button.component';
 import { ProductsPageComponent } from './views/products-page/products-page.component';
 import { ViewModeButtonComponent } from './components/sub-components/view-mode-button/view-mode-button.component';
+import { ProductDetailsComponent } from './views/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { ViewModeButtonComponent } from './components/sub-components/view-mode-b
     HomePageComponent,
     HeroComponent,
     SingleButtonComponent,
-    ProductsPageComponent,
     ViewModeButtonComponent,
+    ProductsPageComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
