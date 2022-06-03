@@ -41,7 +41,7 @@ form #submit {
 
 form #submit {
   padding: 0.65rem 1rem;
-  min-width: 120px;
+  min-width: 105px;
   margin-left: 10px;
   font-size: 13px;
   background: var(--customBlue);
