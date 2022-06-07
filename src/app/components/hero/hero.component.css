@@ -4,14 +4,17 @@
   align-items: center;
   background: #fff;
   height: 350px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 70px;
+  padding: 70px 50px 70px;
+  margin-top: 60px;
+  border-radius: 20px;
   overflow: hidden;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 #hero .content {
-  max-width: 400px;
+  max-width: 420px;
   padding: 20px;
 }
 
@@ -28,7 +31,7 @@
 }
 
 #hero .image {
-  max-width: 460px;
+  width: 420px;
   height: auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -47,12 +50,16 @@
     padding-left: 40px;
   }
 
+  #hero .content {
+    max-width: 400px;
+  }
+
   #hero .content h1 {
-    font-size: 1.875rem;
+    /* font-size: 1.875rem; */
   }
 
   #hero .image {
-    max-width: 320px;
+    max-width: 350px;
   }
 }
 
