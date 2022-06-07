@@ -8,34 +8,34 @@
                     <input type="text" placeholder="Search cars" class="inputs">
                 </div>
                 <div class="item">
-                    <view-mode-button
-                        [viewMode]="viewMode" 
-                        (view)="updateView($event)">
+                    <view-mode-button [viewMode]="viewMode" (view)="updateView($event)">
                     </view-mode-button>
                 </div>
                 <div class="item input-range">
                     <span>{{minPrice}}</span> <br>
-                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter" (change)="updateMinPrice($event)">
+                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter"
+                        (change)="updateMinPrice($event)">
                     <br>
                     <span>{{maxPrice}}</span> <br>
-                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter" (change)="updateMaxPrice($event)">
+                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter"
+                        (change)="updateMaxPrice($event)">
                 </div>
             </aside>
         </div>
-        
+
         <div class="products" [ngSwitch]="viewMode" [class]="viewMode == 'grid' ? 'products' : 'listView'">
             <div *ngFor="let car of allCars; let i=index" class="product-item">
                 <!-- <img src="image/product1.jpg" alt=""> -->
-        
+
                 <div [ngClass]="'product' + i + ' bg-img'"></div>
-        
+
                 <div class="product-description">
                     <div class="product-title">
                         <h3 class="weight-400 text-capitalize">{{ car.name }}</h3>
                         <span class="price">{{ car.price | currency: 'USD' }}</span>
                     </div>
-                    <p>{{ car.desc }}</p>
-        
+                    <p>{{ car.description }}</p>
+
                     <a class="button" [routerLink]="[ '/products', car.link]">View product</a>
                 </div>
             </div>
