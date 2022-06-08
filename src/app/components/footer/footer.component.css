@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  font-size: 15px;
+  font-size: 14px;
   background: var(--lightGray);
 }
 
@@ -12,6 +12,8 @@ footer p {
 
 footer ul {
   display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 footer ul li {
@@ -44,12 +46,12 @@ footer a:hover {
   }
 
   footer ul {
-    margin-top: 10px;
+    margin: 10px auto 0;
   }
 }
 
 @media screen and (max-width: 376px) {
-  footer p {
+  /* footer p {
     margin-top: 20px;
-  }
+  } */
 }

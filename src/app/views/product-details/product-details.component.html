@@ -1,7 +1,69 @@
-<h2>Product Details</h2>
+<section id="product-details">
+    <div *ngIf="product" class="product-details">
+        <div [ngClass]="'product' + index + ' bg-img'">
+            <h1 class="text-uppercase text-center">{{ product.name }}</h1>
+            
+            <a [routerLink]="[ '/products' ]" class="link">All Products</a>
+        </div>
 
-<div *ngIf="product">
-    <h3>{{ product.name }}</h3>
-    <h4>{{ product.price | currency }}</h4>
-    <p>{{ product.description }}</p>
-</div>
+        <ul class="nav nav-tabs" role="tablist" *ngIf="allCategories && allCategories.length > 0">
+            <li class="nav-item" role="presentation" *ngFor="let category of allCategories">
+                <span class="tab-button" [class.activeTab]="tabCategory == category.link" (click)="tabCategory = category.link" role="button">
+                    {{ category.title }}
+                </span>
+            </li>
+        </ul>
+        
+        <div class="tab-content" [ngSwitch]="tabCategory">
+            <div class="tab-item" *ngSwitchCase="'summary'">
+                <h2>Brand: <span>{{ product.name }}</span></h2>
+                <p>Tag: <span>{{ product.tag }}</span></p>
+                <p>Manufacturer: <span>{{ product.manufacturer }}</span></p>
+                <p>Rating: <span>{{ product.rating }}</span></p>
+                <p>Price: <span>{{ product.price | currency }}</span></p>
+                <p>Release Date: <span>{{ product.releaseDate | date }}</span></p>
+                <p>Description: <span>{{ product.description }}</span></p>
+            </div>
+
+            <div class="tab-item" *ngSwitchCase="'feature'">
+                <h2>feature</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+            </div>
+
+            <div class="tab-item" *ngSwitchCase="'demo'">
+                <h2>demo</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+            </div>
+
+            <div class="tab-item" *ngSwitchCase="'schedule'">
+                <h2>schedule</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+            </div>
+
+            <div class="tab-item" *ngSwitchCase="'purchase'">
+                <h2>purchase</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, consequatur? Ratione esse, reprehenderit officiis distinctio temporibus aspernatur aut ex velit corrupti fugit sit nesciunt rem similique perferendis provident nobis tempora.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

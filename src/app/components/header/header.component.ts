@@ -3,34 +3,33 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   isClicked: boolean = false;
 
   navLinks = [
     {
-      link: 'home',
-      name: 'Home'
+      link: '',
+      name: 'Home',
     },
     {
       link: 'about',
-      name: 'About'
+      name: 'About',
     },
     {
-      link: 'howItWorks',
-      name: 'How It Works'
+      link: 'how-it-works',
+      name: 'How It Works',
     },
     {
       link: 'products',
-      name: 'Products'
+      name: 'Products',
     },
-  ]
-  
+  ];
+
   mobileToggler() {
     this.isClicked = !this.isClicked;
   }
 
   ngOnInit(): void {}
-
 }

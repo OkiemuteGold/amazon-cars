@@ -5,10 +5,16 @@
 :root {
   --customWhite: #f4f4f4;
   --customBlack: #333;
-  --lightGray: #eaeaea;
+  --lightGray: #e2e2e2;
   --customGreen: rgb(144, 194, 43);
   --customBlue: rgb(12, 117, 158);
   --customTextColor: #737373;
+  --customOverlay: linear-gradient(
+    to bottom right,
+    rgba(14, 28, 34, 0.7),
+    rgba(14, 28, 34, 0.75),
+    rgba(14, 28, 34, 0.775)
+  );
   --fontMontserrat: "Montserrat", sans-serif;
   --fontLato: "lato", sans-serif;
 }
@@ -34,6 +40,7 @@ body {
   background: var(--customWhite);
   overflow-x: hidden;
   font-family: var(--fontLato);
+  color: var(--customBlack);
 }
 
 ::selection {
@@ -91,6 +98,10 @@ body {
   margin-top: 0;
 }
 
+.mt-10 {
+  margin-top: 10px;
+}
+
 .mt-20 {
   margin-top: 20px;
 }
@@ -103,8 +114,16 @@ body {
   margin-top: 40px;
 }
 
+.mt-50 {
+  margin-top: 50px;
+}
+
 .mb-0 {
   margin-bottom: 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .mb-20 {
@@ -119,6 +138,10 @@ body {
   margin-bottom: 40px;
 }
 
+.mb-50 {
+  margin-bottom: 50px;
+}
+
 a {
   text-decoration: none;
 }
@@ -129,10 +152,10 @@ button,
 #hero .image img,
 .bg-img,
 form #email {
-  -o-transition: 0.4s ease;
-  -moz-transition: 0.4s ease;
-  -webkit-transition: 0.4s ease;
-  transition: 0.4s ease;
+  -o-transition: 0.35s ease;
+  -moz-transition: 0.35s ease;
+  -webkit-transition: 0.35s ease;
+  transition: 0.35s ease;
 }
 
 #submit {
@@ -195,6 +218,13 @@ img {
   max-width: 1200px;
   margin: auto;
   overflow-x: hidden;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main_title {

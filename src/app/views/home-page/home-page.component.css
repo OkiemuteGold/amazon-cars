@@ -92,11 +92,12 @@ form #email:valid {
 
 #howItWorks .content ul {
   line-height: 32px;
+  padding-left: 0;
 }
 
 #howItWorks .content ul li {
   list-style: none;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -161,7 +162,7 @@ form #email:valid {
 
   form #submit {
     margin: 10px;
-    min-width: 250px;
+    /* min-width: 250px; */
   }
 }
 
