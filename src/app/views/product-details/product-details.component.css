@@ -9,7 +9,6 @@
   /* max-width: 500px; */
   border-radius: 5px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -44,8 +43,9 @@
 
 .nav-tabs {
   display: flex;
+  overflow-x: auto;
   padding-top: 2rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
   border-bottom: none;
   list-style: none;
 }
