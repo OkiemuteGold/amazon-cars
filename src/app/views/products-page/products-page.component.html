@@ -13,17 +13,20 @@
                 </div>
                 <div class="item input-range">
                     <span>{{minPrice}}</span> <br>
-                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter"
-                        (change)="updateMinPrice($event)">
+                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter" #minInput
+                        (change)="updateMinPrice(minInput)">
                     <br>
                     <span>{{maxPrice}}</span> <br>
                     <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter"
                         (change)="updateMaxPrice($event)">
                 </div>
+                <div class="item">
+                    <button class="btn-blue" (click)="resetFilter()">Reset</button>
+                </div>
             </aside>
         </div>
 
-        <div class="products" [ngSwitch]="viewMode" [class]="viewMode == 'grid' ? 'products' : 'listView'">
+        <div class="products" [ngSwitch]="viewMode" [class]="viewMode == 'grid' ? 'products' : 'listView'" *ngIf="allCars && allCars.length > 0; else elseNoCar">
             <div *ngFor="let car of allCars; let i=index" class="product-item">
                 <!-- <img src="image/product1.jpg" alt=""> -->
 
@@ -40,5 +43,11 @@
                 </div>
             </div>
         </div>
+        
+        <ng-template #elseNoCar>
+            <div class="errorMessage">
+                <h3>No car matches your search!</h3>
+            </div>
+        </ng-template>
     </div>
 </section>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { SimpleChanges } from '@angular/core';
 import { AllCarsService } from "../../all-services/all-cars/all-cars.service";
 
 @Component({
@@ -9,34 +10,57 @@ import { AllCarsService } from "../../all-services/all-cars/all-cars.service";
 export class ProductsPageComponent implements OnInit {
   viewMode = 'grid';
   allCars: any = [];
+
   minValue = 10000;
   maxValue = 46000;
-  minPrice: any = this.minValue;
-  maxPrice: any = this.maxValue;
+  minPrice: Number = this.minValue;
+  maxPrice: Number = this.maxValue;
+  carService: AllCarsService;
 
   updateView(view: any) {
     this.viewMode = view;
   }
 
-  updateMinPrice(event: any) {
-    this.minPrice = event.target.value;
-    this.filterCarsByPrice();
+  updateMinPrice(minInput: any) {
+    let price = this.minPrice = minInput.value;
+    this.filterCarsByPrice(price);
   }
 
   updateMaxPrice(event: any) {
     this.maxPrice = event.target.value;
-    this.filterCarsByPrice();
+    
+    // this.allCars = this.allCars.filter((car: any) => {
+    //   if (Math.floor(car.price) <= Number(this.maxPrice)) {
+    //     console.log(Math.floor(car.price), Number(this.maxPrice));
+    //     return car
+    //   } else {
+    //     console.log("false");
+    //   }
+    // });
+
+    this.filterCarsByPrice(this.maxPrice);
   }
 
-  filterCarsByPrice() {
-    this.allCars.filter((car: any) => {
-      car.price == this.minPrice || car.price == this.maxPrice
-    })
+  filterCarsByPrice(price: any) {
+    let allCars = this.allCars.filter((car: any) => {
+      return Math.floor(car.price) <= Number(price);
+    });
+
+    this.allCars = allCars;
+  }
+
+  resetFilter() {
+    this.minPrice = this.minValue;
+    this.maxPrice = this.maxValue;
+    this.allCars = this.carService.getAllCars();
   }
 
   constructor(service: AllCarsService) {
+    this.carService = service;
     this.allCars = service.getAllCars();
   }
+
+  // ngOnChanges(changes: SimpleChanges): void { }
 
   ngOnInit(): void {
   }

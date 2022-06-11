@@ -8,6 +8,7 @@
   --lightGray: #e2e2e2;
   --customGreen: rgb(144, 194, 43);
   --customBlue: rgb(12, 117, 158);
+  --customBlueDark: rgb(12, 102, 138);
   --customTextColor: #737373;
   --customOverlay: linear-gradient(
     to bottom right,
@@ -148,6 +149,7 @@ a {
 
 a,
 button,
+.btn-blue,
 .product-item,
 #hero .image img,
 .bg-img,
@@ -265,6 +267,7 @@ img {
   margin-top: 70px;
 }
 
+.btn-blue,
 .view_all_button a {
   padding: 0.5rem 1rem;
   min-width: 120px;
@@ -276,6 +279,16 @@ img {
   border: 1px solid transparent;
   box-shadow: 0.5rem 0.5rem 1.75rem rgb(0 0 0 / 15%);
   border-radius: 5px;
+}
+
+.btn-blue {
+  min-width: initial;
+  border: none;
+  box-shadow: none;
+}
+
+.btn-blue:hover {
+  opacity: 0.8;
 }
 
 .view_all_button a:hover {
