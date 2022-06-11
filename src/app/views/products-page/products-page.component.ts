@@ -10,12 +10,11 @@ import { AllCarsService } from "../../all-services/all-cars/all-cars.service";
 export class ProductsPageComponent implements OnInit {
   viewMode = 'grid';
   allCars: any = [];
-
-  minValue = 10000;
-  maxValue = 46000;
-  minPrice: Number = this.minValue;
-  maxPrice: Number = this.maxValue;
   carService: AllCarsService;
+
+  minPrice: any = 10000;
+  maxPrice: any = 46000;
+  isMinGreaterThanMax: boolean = false;
 
   updateView(view: any) {
     this.viewMode = view;
@@ -47,11 +46,18 @@ export class ProductsPageComponent implements OnInit {
     });
 
     this.allCars = allCars;
+
+    if(this.minPrice >= this.maxPrice) {
+      this.isMinGreaterThanMax = true;
+    } else {
+      this.isMinGreaterThanMax = false;
+    }
   }
 
   resetFilter() {
-    this.minPrice = this.minValue;
-    this.maxPrice = this.maxValue;
+    this.minPrice = 10000;
+    this.maxPrice = 46000;
+    this.isMinGreaterThanMax = false;
     this.allCars = this.carService.getAllCars();
   }
 

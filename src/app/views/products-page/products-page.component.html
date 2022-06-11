@@ -12,13 +12,15 @@
                     </view-mode-button>
                 </div>
                 <div class="item input-range">
-                    <span>{{minPrice}}</span> <br>
-                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter" #minInput
+                    Min: <span>{{ minPrice | currency: '$' }}</span> <br>
+                    <input type="range" min="10000" max="46000" name="price-filter" class="price-filter" #minInput
                         (change)="updateMinPrice(minInput)">
                     <br>
-                    <span>{{maxPrice}}</span> <br>
-                    <input type="range" [min]="minValue" [max]="maxValue" name="price-filter" class="price-filter"
-                        (change)="updateMaxPrice($event)">
+                    <ng-container *ngIf="!isMinGreaterThanMax">
+                        Max: <span>{{ maxPrice | currency: '$' }}</span> <br>
+                        <input type="range" min="10000" max="46000" name="price-filter" class="price-filter"
+                            (change)="updateMaxPrice($event)">
+                    </ng-container>
                 </div>
                 <div class="item">
                     <button class="btn-blue" (click)="resetFilter()">Reset</button>

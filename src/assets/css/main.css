@@ -285,6 +285,7 @@ img {
   min-width: initial;
   border: none;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .btn-blue:hover {
