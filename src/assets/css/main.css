@@ -143,6 +143,10 @@ body {
   margin-bottom: 50px;
 }
 
+.mr-10 {
+  margin-right: 10px;
+}
+
 a {
   text-decoration: none;
 }
@@ -294,6 +298,14 @@ img {
 
 .view_all_button a:hover {
   box-shadow: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 660px) {

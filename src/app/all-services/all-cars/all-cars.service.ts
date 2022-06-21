@@ -51,7 +51,7 @@ export class AllCarsService {
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.',
         rating: '4.546',
         price: '45000.975',
-        manufacturer: 'Toyota',
+        manufacturer: 'BMW',
         releaseDate: new Date(2022, 3, 14),
       },
       {
@@ -75,7 +75,7 @@ export class AllCarsService {
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab earum architecto.',
         rating: '4.546',
         price: '20000.750',
-        manufacturer: 'Toyota',
+        manufacturer: 'Honda',
         releaseDate: new Date(2022, 3, 14),
       },
     ];
